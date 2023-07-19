@@ -13,5 +13,7 @@ UCLASS()
 class VGP221SUMMER2023_API AVGP221Summer2023GameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+protected:
+	virtual void StartPlay() override;
 };
