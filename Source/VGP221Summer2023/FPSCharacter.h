@@ -31,6 +31,9 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* FPSCameraComponent;
 
+	UPROPERTY(VisibleDefaultsOnly, Category = "Mesh")
+	USkeletalMeshComponent* FPSMesh;
+
 	UFUNCTION()
 	void MoveForward(float Value);
 
