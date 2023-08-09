@@ -26,7 +26,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnywhere, Category = "Movement")
-	float BulletSpeed;
+	float BulletSpeed = 1000;
 
 	UPROPERTY(VisibleDefaultsOnly, Category = "Projectile")
 	USphereComponent* CollisionComponent;
@@ -41,4 +41,7 @@ public:
 	UMaterialInstanceDynamic* ProjectileMaterialInstance;
 
 	void FireInDirection(const FVector& ShootDirection);
+
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
 };
