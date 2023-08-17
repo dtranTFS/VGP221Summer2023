@@ -39,6 +39,8 @@ void AFPSCharacter::BeginPlay()
 	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("Spawning FPSCharacter"));
 	
 	UE_LOG(LogTemp, Warning, TEXT("Spawning FPSCharacter"));
+
+	Health = MaxHealth;
 }
 
 // Called every frame
@@ -94,6 +96,13 @@ void AFPSCharacter::EndJump()
 
 void AFPSCharacter::Fire()
 {
+	AVGP221Summer2023GameModeBase* GameMode = Cast<AVGP221Summer2023GameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
+	if (GameMode)
+	{
+		Health -= 10;
+		GameMode->CurrentWidget->SetHealthBar(Health / MaxHealth);
+	}
+
 	if (!ProjectileClass) return;
 
 	FVector CameraLocation;

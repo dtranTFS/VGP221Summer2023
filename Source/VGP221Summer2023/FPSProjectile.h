@@ -31,13 +31,13 @@ public:
 	UPROPERTY(VisibleDefaultsOnly, Category = "Projectile")
 	USphereComponent* CollisionComponent;
 
-	UPROPERTY(VisibleDefaultsOnly, Category = Projectile)
+	UPROPERTY(VisibleDefaultsOnly, Category = "Projectile")
 	UStaticMeshComponent* ProjectileMeshComponent;
 
 	UPROPERTY(VisibleDefaultsOnly, Category = "Movement")
 	UProjectileMovementComponent* ProjectileMovementComponent;
 
-	UPROPERTY(VisibleDefaultsOnly, Category = Movement)
+	UPROPERTY(VisibleDefaultsOnly, Category = "Movement")
 	UMaterialInstanceDynamic* ProjectileMaterialInstance;
 
 	void FireInDirection(const FVector& ShootDirection);

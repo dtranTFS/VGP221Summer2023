@@ -7,6 +7,8 @@
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "FPSProjectile.h"
+#include "Kismet/GameplayStatics.h"
+#include "VGP221Summer2023GameModeBase.h"
 #include "FPSCharacter.generated.h"
 
 UCLASS()
@@ -23,6 +25,9 @@ protected:
 	virtual void BeginPlay() override;
 
 public:	
+	float Health = 100;
+	const float MaxHealth = 100;
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
